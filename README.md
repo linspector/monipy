@@ -1,2 +1,1 @@
-# monipy
-
+# monipy - A infrastructure monitoring toolchain

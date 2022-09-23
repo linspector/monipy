@@ -240,3 +240,5 @@ luac.out
 *.hex
 
 
+/monipy.iml
+/.idea/
