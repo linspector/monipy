@@ -41,7 +41,7 @@ According to: [https://wiki.unixpeople.org/linux_kernel_version_numbering](https
 - **MAJOR** changes _can_ change the API. The lesser, the better.
 - **FEATURE** changes can, but _should_ not break the API. New features are placed
   here. It _expects_ a complete documentation.
-- **MINOR** changes are "just-in-time" changes or small enhancements which _must_
+- **MINOR** changes are "just-in-time" changes or small enhancements which _should_
   not affect the documentation and _must_ not break the API.
 - **FIXES** _must_ never affect anything else then stability or security.
 
