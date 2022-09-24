@@ -242,3 +242,4 @@ luac.out
 
 /monipy.iml
 /.idea/
+!/MANIFEST
