@@ -22,9 +22,9 @@ OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 
 from logging import getLogger
-from monipy.notications.notification import Notification
+from monipy.core.notification import Notification
 
-logger = getLogger('monipyd')
+logger = getLogger('monipy')
 
 
 class SmsNotification(Notification):

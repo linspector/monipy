@@ -22,12 +22,15 @@ OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 
 from logging import getLogger
+from monipy.core.monitor import Monitor
 
-logger = getLogger('monipyd')
+logger = getLogger('monipy')
 
 
-class Monipy:
+# TODO: check for all required configuration options and set defaults if needed.
+class FritzboxMonitor(Monitor):
 
     def __init__(self, configuration, environment):
+        super().__init__(configuration, environment)
         self.__configuration = configuration
         self.__environment = environment

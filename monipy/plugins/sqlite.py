@@ -22,11 +22,12 @@ OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 
 from logging import getLogger
-from monipy.plugins.plugin import Plugin
+from monipy.core.plugin import Plugin
 
 logger = getLogger('monipyd')
 
 
+# TODO: check for all required configuration options and set defaults if needed.
 class SqlitePlugin(Plugin):
 
     def __init__(self, configuration, environment):

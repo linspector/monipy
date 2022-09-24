@@ -27,9 +27,11 @@ import os
 
 from logging import getLogger
 
-logger = getLogger('monipyd')
+logger = getLogger('monipy')
 
 
+# TODO: check for all required configuration options and set defaults if needed. do this only for
+#  options in the "monipy" section of monipy.ini.
 class Configuration:
 
     def __init__(self, configuration_path):
@@ -74,3 +76,11 @@ class Configuration:
             return self.__configuration.get(section, option)
         else:
             return None
+
+    # this function can be called by notifications, plugins and types to set a default value if not
+    # configured. since all objects have access to the configuration this should not be done from
+    # any other place because it can break monipy.
+    # maybe it can be used for dynamic runtime configuration later but need to think about it.
+    def set_option(self, section, option, value):
+        if not self.__configuration.has_option(section, option):
+            self.__configuration.set(section, option, value)

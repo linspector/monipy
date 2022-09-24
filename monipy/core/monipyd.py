@@ -22,12 +22,15 @@ OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 
 from logging import getLogger
+from monipy.daemon import Daemon
 
-logger = getLogger('monipyd')
+logger = getLogger('monipy')
 
 
-class Monitors:
+# TODO: check for all required configuration options and set defaults if needed.
+class Monipyd(Daemon):
 
     def __init__(self, configuration, environment):
+        super().__init__(configuration.get_option('monipy', 'pid_file'))
         self.__configuration = configuration
-        self._environment = environment
+        self.__environment = environment

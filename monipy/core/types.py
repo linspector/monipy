@@ -23,12 +23,12 @@ OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 from logging import getLogger
 
-logger = getLogger('monipyd')
+logger = getLogger('monipy')
 
 
-class Model:
+class Types:
 
     def __init__(self, configuration, environment):
         super().__init__()
         self.__configuration = configuration
-        self._environment = environment
+        self.__environment = environment

@@ -27,12 +27,13 @@ import time
 from logging import getLogger
 
 
-from monipy.types.type import Type
+from monipy.core.monitor import Monitor
 
-logger = getLogger('monipyd')
+logger = getLogger('monipy')
 
 
-class SpeedtestType(Type):
+# TODO: check for all required configuration options and set defaults if needed.
+class SpeedtestMonitor(Monitor):
 
     def __init__(self, configuration, environment):
         super().__init__(configuration, environment)

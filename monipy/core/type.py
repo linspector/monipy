@@ -23,10 +23,10 @@ OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 from logging import getLogger
 
-logger = getLogger('monipyd')
+logger = getLogger('monipy')
 
 
-class Notification:
+class Type:
 
     def __init__(self, configuration, environment):
         self.__configuration = configuration

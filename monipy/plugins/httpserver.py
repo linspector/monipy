@@ -25,11 +25,12 @@ import cherrypy
 import json
 
 from logging import getLogger
-from monipy.plugins.plugin import Plugin
+from monipy.core.plugin import Plugin
 
-logger = getLogger('monipyd')
+logger = getLogger('monipy')
 
 
+# TODO: check for all required configuration options and set defaults if needed.
 class HTTPServerPlugin(Plugin):
 
     def __init__(self, configuration, environment):

@@ -1,6 +1,5 @@
-#!/usr/bin/python3 -d
-
 """
+This file is part of monipy (https://hanez.org/monipy/)
 Copyright (c) 2022 Johannes Findeisen <you@hanez.org>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -22,49 +21,16 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF
 OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 
-import argparse
-import sys
-
 from logging import getLogger
 
-from monipy.configuration import Configuration
-from monipy.environment import Environment
-from monipy.monipyd import Monipyd
-
-__version__ = '0.1'
-__author__ = 'Johannes Findeisen <you@hanez.org>'
-
-logger = getLogger('monipyd')
+logger = getLogger('monipy')
 
 
-def parse_args():
-    parser = argparse.ArgumentParser(
-        description='monipyd is a infrastructure monitoring daemon.',
-        epilog='author: ' + __author__,
-        prog='monipyd')
+# monitors could, should  be added (and maybe changed) at runtime to add new monitors without
+# restarting the daemon. maybe add a reset function to each monitor to reset the monitor at runtime
+# when changed dynamically.
+class Monitors:
 
-    parser.add_argument('configuration_path', metavar='CONFIGURATION_PATH',
-                        help='the configuration path to use')
-
-    parser.add_argument('-v', '--version', action='version', version='%(prog)s ' + str(__version__))
-
-    return parser.parse_args()
-
-
-def main():
-    args = parse_args()
-
-    try:
-        configuration = Configuration(args.configuration_path)
-        configuration.dump_to_ini()
-    except Exception as err:
-        logger.error(str('[uplink] configuration error: {0}'.format(err)))
-        sys.exit(1)
-
-    environment = Environment(configuration)
-
-    monipyd = Monipyd(configuration, environment)
-
-
-if __name__ == '__main__':
-    main()
+    def __init__(self, configuration, environment):
+        self.__configuration = configuration
+        self._environment = environment

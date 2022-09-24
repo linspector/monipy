@@ -22,14 +22,18 @@ OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 """
 
 from logging import getLogger
-from monipy.types.type import Type
 
-logger = getLogger('monipyd')
+logger = getLogger('monipy')
 
 
-class PortType(Type):
+# The logger can be used by any monitor to write arbitrary data to any arbitrary place.
+# Need to think about this more but some monitors are or can collect more data than needed for
+# running monipyd. This enables longtime storage of collected data like in uplink.
+# Maybe this can be archived by storing an arbitrary JSON string in a none defined field in the
+# database. then maybe redis can be used for everything. Storing data should be optional for
+# running monipyd.
+class Logger:
 
     def __init__(self, configuration, environment):
-        super().__init__(configuration, environment)
         self.__configuration = configuration
         self.__environment = environment

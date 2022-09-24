@@ -29,7 +29,7 @@ import time
 
 from logging import getLogger
 
-logger = getLogger('monipyd')
+logger = getLogger('monipy')
 
 
 class Daemon:
