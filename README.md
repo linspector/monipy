@@ -1,61 +1,9 @@
 # monipy - A infrastructure monitoring toolchain
 
-This is implemented in an old school way for easy understanding without cloud
-and such stuff... Hope it will become useful someday for somebody and not only for
-me.
+Go to [https://git.unixpeople.org/linspector/linspector](https://git.unixpeople.org/linspector/linspector) if you 
+are interested in future versions of monipy...
 
-## About
-
-**monipy** contains some tools and a daemon to monitor your infrastructure. It
-collects data for statistics and sends alerts in case of errors.
-
-This project is at a very early stage of development it is not able for usage.
-I design the software actually and try to convert my ideas to software. Code
-nearly does not exist.
-
-## Development
-
-### To do
-
-**Everything!** :) Just outlining the idea and creating code and structure skeletons
-at the moment!
-
-### Ideas
-
-- MAYBE rename this project to linspector and see it as an update. This is a nice idea 
-because [Linspector](https://hanez.org/linspector/) has it's GitHub organisation, 
-domain etc. And all I do here is 
-a better Linspector. Even all nice and useful features and ideas from Linspector but 
-also uplink should be reimplemented here.
-
-- Think about adding [APScheduler](https://pypi.org/project/APScheduler/) for 
-scheduling execution of the monitors instead of a self constructed thread
-structure... was very nice to get the job done in Linspector.
-
-### Manifest
-
-- All of this project **must be MIT licensed**. When using 3rd party libraries make
-sure the license is compatible but MIT should always be preferred if an
-alternative is available.
-- The core of monipy/monipyd should not use 3rd party libraries. only plugins,
-notifications and types may use other libraries. But coping code into the
-source tree is ok when respecting the license. Not using 3rd party libraries
-should always be preferred though.
-- Inline comment should be all lowercase. Descriptions and documentation comments
-must be natural language.
-
-### Version numbering
-
-According to: [https://wiki.unixpeople.org/linux_kernel_version_numbering](https://wiki.unixpeople.org/linux_kernel_version_numbering)
-
-**MAJOR**.**FEATURE**.**MINOR**.**FIXES**
-
-- **MAJOR** changes _can_ change the API. The lesser, the better.
-- **FEATURE** changes can, but _should_ not break the API. New features are placed
-  here. It _expects_ a complete documentation.
-- **MINOR** changes are "just-in-time" changes or small enhancements which _should_
-  not affect the documentation and _must_ not break the API.
-- **FIXES** _must_ never affect anything else then stability or security.
+**No more development here!**
 
 ## License
 
