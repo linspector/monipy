@@ -1,7 +1,5 @@
 # monipy - A infrastructure monitoring toolchain
 
-# **THIS CODE HAS BEEN MOVED TO [https://git.unixpeople.org/linspector/monipy](https://git.unixpeople.org/linspector/monipy)**
-
 This is implemented in an old school way for easy understanding without cloud
 and such stuff... Hope it will become useful someday for somebody and not only for
 me.
